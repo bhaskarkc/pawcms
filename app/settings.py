@@ -14,8 +14,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'froala_editor',
+
     'users',
     'page',
+
 )
 
 MIDDLEWARE_CLASSES = (
