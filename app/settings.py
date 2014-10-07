@@ -1,5 +1,6 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -12,6 +13,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'users',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -39,7 +42,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -49,10 +51,8 @@ STATICFILES_DIRS = (
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    #     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
-
-
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
@@ -67,7 +67,7 @@ TEMPLATE_DIRS = (
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
 # LOGGING = {
-#     'version': 1,
+# 'version': 1,
 #     'disable_existing_loggers': False,
 #     'filters': {
 #         'require_debug_false': {
@@ -91,10 +91,10 @@ TEMPLATE_DIRS = (
 # }
 
 try:
-    from local_settings import *
+    from .local_settings import *  # noqa
 except ImportError:
     pass
 
-# AUTH_USER_MODEL = 'django.contrib.auth.models.User'
+AUTH_USER_MODEL = 'users.User'
 # LOGIN_REDIRECT_URL = '/'
 # LOGIN_URL = '/user/login/'

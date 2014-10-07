@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin, UserChangeForm as DjangoUserChangeForm, UserCreationForm as DjangoUserCreationForm
-from django.contrib.sites.models import Site
 from django import forms
 
 from users.models import User
@@ -98,9 +97,9 @@ class CustomUserAdmin(UserAdmin):
 admin.site.register(User, CustomUserAdmin)
 
 # Removing default apps
-admin.site.unregister(Site)
+# admin.site.unregister(Site)
 
-from django.utils.translation import ugettext as _
-from django.contrib.auth.models import Group
-Group._meta.app_label = _('Users')
-User._meta.app_label = _('Users')
+# from django.utils.translation import ugettext as _
+# from django.contrib.auth.models import Group
+# Group._meta.app_label = _('Users')
+# User._meta.app_label = _('Users')
