@@ -27,8 +27,18 @@ class Migration(migrations.Migration):
                 ('groups', models.ManyToManyField(related_name=b'users', to='auth.Group', blank=True)),
             ],
             options={
-                'db_table': 'user',
+                'abstract': False,
             },
             bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='GroupProxy',
+            fields=[
+            ],
+            options={
+                'verbose_name': 'Group',
+                'proxy': True,
+            },
+            bases=('auth.group',),
         ),
     ]

@@ -1,8 +1,9 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin, UserChangeForm as DjangoUserChangeForm, UserCreationForm as DjangoUserCreationForm
+from django.contrib.auth.admin import UserAdmin, UserChangeForm as DjangoUserChangeForm, \
+    UserCreationForm as DjangoUserCreationForm
 from django import forms
 
-from users.models import User
+from users.models import User, GroupProxy
 
 
 class UserCreationForm(DjangoUserCreationForm):
@@ -49,8 +50,8 @@ class UserChangeForm(DjangoUserChangeForm):
     password hash display field.
     """
     # password = ReadOnlyPasswordHashField(label= ("Password"),
-    #    help_text= ("Raw passwords are not stored, so there is no way to see "
-    #                "this user's password, but you can change the password "
+    # help_text= ("Raw passwords are not stored, so there is no way to see "
+    # "this user's password, but you can change the password "
     #                "using <a href=\"password/\">this form</a>."))
 
     class Meta(DjangoUserChangeForm.Meta):
@@ -99,7 +100,8 @@ admin.site.register(User, CustomUserAdmin)
 # Removing default apps
 # admin.site.unregister(Site)
 
-# from django.utils.translation import ugettext as _
-# from django.contrib.auth.models import Group
-# Group._meta.app_label = _('Users')
-# User._meta.app_label = _('Users')
+
+from django.contrib.auth.models import Group
+
+admin.site.unregister(Group)
+admin.site.register(GroupProxy)
