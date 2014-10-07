@@ -42,7 +42,7 @@ USE_TZ = True
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '..', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 # List of callables that know how to import templates from various sources.
@@ -55,7 +55,7 @@ TEMPLATE_LOADERS = (
 
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, '..', 'templates'),
+    os.path.join(BASE_DIR, 'templates'),
 )
 
 
