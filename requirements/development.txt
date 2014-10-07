@@ -3,3 +3,4 @@ psycopg2
 django-debug-toolbar
 ipython
 pyinotify
+flake8
