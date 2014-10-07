@@ -1,5 +1,7 @@
 django
 psycopg2
+django-mptt
+django-froala-editor
 django-debug-toolbar
 ipython
 pyinotify
