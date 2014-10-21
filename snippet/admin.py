@@ -1,6 +1,22 @@
 from django.contrib import admin
 from snippet.models import Snippet
-from users.admin import NotForStaff
+
+
+class NotForStaff(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        if not request.user.is_admin:
+            return False
+        return True
+
+    def has_change_permission(self, request, obj=None):
+        if not request.user.is_admin:
+            return False
+        return True
+
+    def has_delete_permission(self, request, obj=None):
+        if not request.user.is_admin:
+            return False
+        return True
 
 
 class SnippetAdmin(NotForStaff):
