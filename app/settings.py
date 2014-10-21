@@ -15,6 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'froala_editor',
+    'dbsettings',
 
     'core',
     'users',
