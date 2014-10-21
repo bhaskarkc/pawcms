@@ -46,8 +46,8 @@ def snippet(name, args=''):
 
         snip_content = snip.content
 
-        if not snip.code_mode:
-            snip_content = snip_content.replace('\n', '<br>')
+        # if not snip.code_mode:
+        #     snip_content = snip_content.replace('\n', '<br>')
 
         content += snip_content
 
