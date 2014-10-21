@@ -108,6 +108,10 @@ nav {
     text-align: center;
 }
 
+.center {
+    text-align: center;
+}
+
 header h1, header h2 {
     margin: 0;
     padding: 14px 0;
