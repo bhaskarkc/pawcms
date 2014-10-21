@@ -65,8 +65,16 @@
     font-smoothing: antialiased;
 }
 
+html {
+    /*background: #f3f3f3;*/
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    background: #fafafa
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
 }
 
 .row {
@@ -94,7 +102,11 @@ hr {
 header {
     background: #f3f3f3;
     clear: both;
-    padding: 20px 0 40px
+}
+
+header h1, header h2 {
+    margin: 0;
+    padding: 14px 0;
 }
 
 .header_nav {
