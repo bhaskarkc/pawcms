@@ -5,6 +5,7 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
+{% load filters %}
 
 <head>
 
@@ -12,7 +13,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width"/>
 
-    <title>Theme by CssTemplateHeaven</title>
+    <title>{% block title %}{{ 'core.settings.site_name'|setting }}{% endblock %}</title>
 
     <!-- Included CSS Files (Compressed) -->
     <link rel="stylesheet" href="/static/base13/stylesheets/foundation.min.css">
@@ -36,6 +37,13 @@
 
 <body>
 
+<header>
+    <h1 class="">{{ 'core.settings.site_name'|setting }}</h1>
+
+    <h2 class="welcome_text">{{ 'core.settings.site_slogan'|setting }}</h2>
+</header>
+
+
 <!-- ######################## Main Menu ######################## -->
 
 <nav>
@@ -45,38 +53,39 @@
 
             <ul id="menu-header" class="nav-bar horizontal">
 
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class=""><a href="/">Home</a></li>
 
                 <li class="has-flyout">
-                    <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
+                    <a href="#">About Us</a><a href="#" class="flyout-toggle"></a>
                     <ul class="flyout"><!-- Flyout Menu -->
-                        <li class="has-flyout"><a href="blog.html">Blog</a></li>
-                        <li class="has-flyout"><a href="blog_single.html">Blog Single Page</a></li>
-                        <li class="has-flyout"><a href="products-page.html">Products Page</a></li>
-                        <li class="has-flyout"><a href="product-single.html">Product Single</a></li>
-                        <li class="has-flyout"><a href="pricing-table.html">Pricing Table</a></li>
-                        <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
+                        <li class="has-flyout"><a href="/historical-background">Historical Background</a></li>
+                        <li class="has-flyout"><a href="/chief-message">Message from Chief</a></li>
                     </ul>
                 </li>
                 <!-- END Flyout Menu -->
 
-                <li class=""><a href="galleries.html">Boxed Gallery</a></li>
-                <li class=""><a href="portfolio.html">Portfolio Gallery</a></li>
-                <li class=""><a href="pinterest-style.html">Pinterest Gallery</a></li>
-                <li class=""><a href="tiles.html">Tiles</a></li>
+
+                <li class=""><a href="/gallery/">Gallery</a></li>
+                <li class=""><a href="/news/">News</a></li>
+                <li class=""><a href="/notice/">Notices</a></li>
+
+                <li class=""><a href="/contact-us">Contact Us</a></li>
 
             </ul>
 
-            <script type="text/javascript">
-                //<![CDATA[
-                $('ul#menu-header').nav - bar();
-                //]]>
-            </script>
+            {#            <script type="text/javascript">#}
+            {#                //<![CDATA[#}
+            {#                $('ul#menu-header').nav - bar();#}
+            {#                //]]>#}
+            {#            </script>#}
 
         </div>
     </div>
 
 </nav>
+
+{% block content %}
+{% endblock %}
 
 
 <!-- ######################## Footer ######################## -->
