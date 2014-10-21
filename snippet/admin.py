@@ -26,7 +26,8 @@ class SnippetAdmin(NotForStaff):
         }),
         ('Advanced options', {
             'classes': ('collapse',),
-            'fields': ('show_heading', 'html_id', 'html_classes', 'code_mode')
+            # 'fields': ('show_heading', 'html_id', 'html_classes', 'code_mode')
+            'fields': ('show_heading', 'html_id', 'html_classes')
         }),
     )
 
