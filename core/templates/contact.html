@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
-
+{% load filters %}
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
     <div class="six columns">
         <h3>Address</h3>
 
-        <p><strong>Business INC</strong></p>
+        <p><strong>{{ 'core.settings.address'|setting|linebreaks }}</strong></p>
 
-        <p>Telephone: 99 88 77 66<br/>
-            E-mail: mail@doe.com</p><!-- // MAILCHIMP SUBSCRIBE CODE \\ -->
+        <p>
+            {% if 'core.settings.phone'|setting %}
+                Telephone: {{ 'core.settings.phone'|setting }}<br/>
+            {% endif %}
+            {% if 'core.settings.fax'|setting %}
+                Fax: {{ 'core.settings.fax'|setting }}<br/>
+            {% endif %}
+            {% if 'core.settings.email'|setting %}
+                E-mail: <a href="mailto:{{ 'core.settings.email'|setting }}">{{ 'core.settings.email'|setting }}</a>
+            {% endif %}
+        </p>
 
-        <p><a href="#">Subscribe to Newsletter</a></p>
-        <!-- \\ MAILCHIMP SUBSCRIBE LINK // -->
-
-        <p><strong>Office: mon-fri 10.00 - 16.30</strong><br/>
-            <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum porttitor lacus.</em></p>
 
         <!-- Contact Form -->
 
