@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     'froala_editor',
     'dbsettings',
 
+    'snippet',
     'core',
     'users',
     'page',
@@ -76,7 +77,7 @@ TEMPLATE_DIRS = (
 # LOGGING = {
 # 'version': 1,
 # 'disable_existing_loggers': False,
-#     'filters': {
+# 'filters': {
 #         'require_debug_false': {
 #             '()': 'django.utils.log.RequireDebugFalse'
 #         }
