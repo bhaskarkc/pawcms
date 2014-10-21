@@ -1,7 +1,5 @@
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
-from core.forms import ContactForm
 from socket import error as socket_error
 
 
