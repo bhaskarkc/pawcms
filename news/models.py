@@ -37,3 +37,4 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = 'News'
+        get_latest_by = 'date'
