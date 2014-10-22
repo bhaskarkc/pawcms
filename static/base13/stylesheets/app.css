@@ -25,3 +25,11 @@ header {
 .meta.inline {
     padding-left: 10px;
 }
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    padding-left: 1em;
+}
