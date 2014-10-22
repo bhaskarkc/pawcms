@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{#{% load filters %}#}
+{#{% load pagination_tags %}#}
+
+
+{% block title %} News {% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <span> {% trans 'News' %}</span>
+{% endblock %}
+
+{% block content %}
+
+    {#    {% autopaginate objects 20 as paginated_objects %}#}
+    {##}
+    {##}
+    {#    {% for patron in paginated_objects %}#}
+    {#    {% endfor %}#}
+
+    {% for object in objects %}
+
+        {{ object }}
+
+    {% endfor %}
+
+
+    {#    {% paginate %}#}
+
+
+{% endblock %}
