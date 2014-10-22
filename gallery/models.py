@@ -47,6 +47,9 @@ class Image(models.Model):
     def file_name(self):
         return self.file.file.name.split('/')[-1:][0]
 
+    def get_absolute_url(self):
+        return reverse('view_image', kwargs={'pk': self.pk})
+
     def save(self, *args, **kwargs):
         if not self.id:
             self.created_at = datetime.datetime.today()

@@ -12,5 +12,6 @@ def view_album(request, slug):
     return render(request, 'view_album.html', {'album': album})
 
 
-def view_image(request):
-    pass
+def view_image(request, pk):
+    image = get_object_or_404(Image, pk=pk)
+    return render(request, 'view_image.html', {'image': image})
