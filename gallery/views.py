@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from models import Album, Image
 
 
@@ -7,8 +7,9 @@ def list_albums(request):
     return render(request, 'list_albums.html', {'objects': albums})
 
 
-def view_album(request):
-    pass
+def view_album(request, slug):
+    album = get_object_or_404(Album, slug=slug)
+    return render(request, 'view_album.html', {'album': album})
 
 
 def view_image(request):
