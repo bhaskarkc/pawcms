@@ -20,6 +20,7 @@ INSTALLED_APPS = (
     'linaro_django_pagination',
 
     'notice',
+    'college',
     'news',
     'snippet',
     'core',
@@ -85,7 +86,7 @@ TEMPLATE_DIRS = (
 # 'require_debug_false': {
 # '()': 'django.utils.log.RequireDebugFalse'
 # }
-#     },
+# },
 #     'handlers': {
 #         'mail_admins': {
 #             'level': 'ERROR',
