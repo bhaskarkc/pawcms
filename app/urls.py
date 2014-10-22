@@ -7,6 +7,7 @@ urlpatterns = patterns('',
                        url(r'^notice/', include('notice.urls')),
                        url(r'^$', 'core.views.home', name='home'),
                        url(r'contact-us/', 'core.views.contact', name='contact'),
+                       url(r'apply-online/', 'college.views.apply_online', name='apply_online'),
                        url(r'^admin/', include(admin.site.urls)),
                        (r'', include('page.urls')),
 )

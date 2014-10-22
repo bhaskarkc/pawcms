@@ -10,5 +10,5 @@ class Application(models.Model):
     photo = models.ImageField()
     attachment = models.FileField()
 
-    def unicode(self):
+    def __str__(self):
         return self.name
