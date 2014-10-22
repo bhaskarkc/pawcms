@@ -20,6 +20,7 @@ INSTALLED_APPS = (
     'linaro_django_pagination',
 
     'notice',
+    'gallery',
     'news',
     'snippet',
     'core',
