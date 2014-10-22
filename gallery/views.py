@@ -1,3 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def list_galleries(request):
+    pass
+
+
+def view_gallery(request):
+    pass
+
+
+def view_image(request):
+    pass
