@@ -1,4 +1,5 @@
 import datetime
+from django.core.urlresolvers import reverse
 from django.db import models
 from app.libr import unique_slugify
 
@@ -21,11 +22,14 @@ class Album(models.Model):
         return self.images.all()[0]
 
     def save(self, *args, **kwargs):
-        unique_slugify(self, self.title)
+        unique_slugify(self, self.name)
         if not self.id:
             self.created_at = datetime.datetime.today()
         self.updated_at = datetime.datetime.today()
         super(Album, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('view_album', kwargs={'slug': self.slug})
 
     def __str__(self):
         return self.name
