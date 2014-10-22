@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from froala_editor.fields import FroalaField
 from users.models import User
@@ -38,6 +39,9 @@ class News(models.Model):
     @property
     def excerpt(self):
         return excerpt(self.content)
+
+    def get_absolute_url(self):
+        return reverse('view_news', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name_plural = 'News'

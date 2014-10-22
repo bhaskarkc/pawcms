@@ -26,7 +26,7 @@
 
         <article class="post">
 
-            <a href="#"><h3 class="inline">{{ object.title }}</h3></a>
+            <a href="{{ object.get_absolute_url }}"><h3 class="inline">{{ object.title }}</h3></a>
             <span class="date meta inline">{{ object.date }}</span>
 
             <p> {{ object.excerpt }}</p>
