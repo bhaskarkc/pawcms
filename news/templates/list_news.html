@@ -20,11 +20,21 @@
     {#    {% for patron in paginated_objects %}#}
     {#    {% endfor %}#}
 
+    <h2>{% trans 'News' %}</h2>
+
     {% for object in objects %}
 
-        {{ object }}
+        <article class="blog_post">
+
+            <a href="#"><h3>{{ object.title }}</h3></a>
+
+            <p> {{ object.content|safe }}</p>
+
+
+        </article>
 
     {% endfor %}
+
 
 
     {#    {% paginate %}#}
