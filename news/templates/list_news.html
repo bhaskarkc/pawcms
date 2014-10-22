@@ -2,7 +2,7 @@
 
 {% load i18n %}
 {#{% load filters %}#}
-{#{% load pagination_tags %}#}
+{% load pagination_tags %}
 
 
 {% block title %} News {% endblock %}
@@ -14,7 +14,7 @@
 
 {% block content %}
 
-    {#    {% autopaginate objects 20 as paginated_objects %}#}
+    {% autopaginate objects 10 as paginated_objects %}
     {##}
     {##}
     {#    {% for patron in paginated_objects %}#}
@@ -22,7 +22,7 @@
 
     <h2>{% trans 'News' %}</h2>
 
-    {% for object in objects %}
+    {% for object in paginated_objects %}
 
         <article class="post">
 
@@ -37,8 +37,7 @@
     {% endfor %}
 
 
-
-    {#    {% paginate %}#}
+    {% paginate %}
 
 
 {% endblock %}

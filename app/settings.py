@@ -80,7 +80,7 @@ TEMPLATE_DIRS = (
 # 'version': 1,
 # 'disable_existing_loggers': False,
 # 'filters': {
-#         'require_debug_false': {
+# 'require_debug_false': {
 #             '()': 'django.utils.log.RequireDebugFalse'
 #         }
 #     },
@@ -108,3 +108,12 @@ except ImportError:
 AUTH_USER_MODEL = 'users.User'
 # LOGIN_REDIRECT_URL = '/'
 # LOGIN_URL = '/user/login/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.static',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.i18n',
+    'django.contrib.messages.context_processors.messages',
+)
