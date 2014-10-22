@@ -1,11 +1,13 @@
 from django.shortcuts import render
+from models import Album, Image
 
 
-def list_galleries(request):
-    pass
+def list_albums(request):
+    albums = Album.objects.all()
+    return render(request, 'list_albums.html', {'objects': albums})
 
 
-def view_gallery(request):
+def view_album(request):
     pass
 
 
