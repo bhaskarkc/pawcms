@@ -13,7 +13,7 @@ class News(models.Model):
         null=True,
         help_text='Leave empty/unchanged for default slug.')
     content = FroalaField(null=True, blank=True)
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, null=True, blank=True)
     statuses = (
         ('Published', 'Published'), ('Draft', 'Draft'), ('Trashed', 'Trashed'))
     status = models.CharField(
