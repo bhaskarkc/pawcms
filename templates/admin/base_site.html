@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% load filters %}
+
+{% block title %}{{ 'core.settings.site_name'|setting }} Site Administration{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">{{ 'core.settings.site_name'|setting }}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
