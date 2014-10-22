@@ -14,10 +14,11 @@ class News(models.Model):
         null=True,
         help_text='Leave empty/unchanged for default slug.')
     content = FroalaField(null=True, blank=True)
+    date = models.DateField(default=datetime.datetime.today())
     author = models.ForeignKey(User, null=True, blank=True)
     statuses = (
         ('Published', 'Published'), ('Draft', 'Draft'), ('Trashed', 'Trashed'))
-    date = models.DateField(default=datetime.datetime.today())
+
     status = models.CharField(
         max_length=10,
         choices=statuses,
