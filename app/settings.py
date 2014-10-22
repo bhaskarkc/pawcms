@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     'froala_editor',
     'dbsettings',
 
+    'news',
     'snippet',
     'core',
     'users',
