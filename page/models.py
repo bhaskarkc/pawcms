@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from users.models import User
 from mptt.models import MPTTModel, TreeForeignKey
@@ -57,6 +58,9 @@ class Page(models.Model):
             self.created_at = datetime.datetime.today()
         self.updated_at = datetime.datetime.today()
         super(Page, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('view_news', kwargs={'slug': self.slug})
 
     def __str__(self):
         return self.title

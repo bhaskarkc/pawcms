@@ -1,3 +1,27 @@
 header {
     text-align: center;
 }
+
+.snippet-heading {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: normal;
+    color: #333;
+    margin: 20px 0;
+}
+
+.panel .snippet-heading {
+    margin-top: 0;
+    font-size: 27px;
+}
+
+.meta {
+    opacity: 0.5;
+}
+
+.inline {
+    display: inline;
+}
+
+.meta.inline {
+    padding-left: 10px;
+}

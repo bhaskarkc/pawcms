@@ -17,7 +17,11 @@ INSTALLED_APPS = (
 
     'froala_editor',
     'dbsettings',
+    'linaro_django_pagination',
 
+    'notice',
+    'news',
+    'snippet',
     'core',
     'users',
     'page',
@@ -32,6 +36,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'linaro_django_pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'app.urls'
@@ -76,10 +81,10 @@ TEMPLATE_DIRS = (
 # LOGGING = {
 # 'version': 1,
 # 'disable_existing_loggers': False,
-#     'filters': {
-#         'require_debug_false': {
-#             '()': 'django.utils.log.RequireDebugFalse'
-#         }
+# 'filters': {
+# 'require_debug_false': {
+# '()': 'django.utils.log.RequireDebugFalse'
+# }
 #     },
 #     'handlers': {
 #         'mail_admins': {
@@ -105,3 +110,12 @@ except ImportError:
 AUTH_USER_MODEL = 'users.User'
 # LOGIN_REDIRECT_URL = '/'
 # LOGIN_URL = '/user/login/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.static',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.i18n',
+    'django.contrib.messages.context_processors.messages',
+)

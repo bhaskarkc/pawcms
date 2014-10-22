@@ -1,0 +1,12 @@
+<div class="widget">
+    <h3 class="center">Latest News</h3>
+    {% load filters %}
+    {% get_latest news.News 5 -date as all_news %}
+    <ul>
+        {% for news in all_news %}
+            <li>
+                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

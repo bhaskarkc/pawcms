@@ -7,3 +7,4 @@ ipython
 pyinotify
 flake8
 -e git+git@github.com:xtranophilist/django-dbsettings.git@master#egg=django-dbsettings
+linaro-django-pagination

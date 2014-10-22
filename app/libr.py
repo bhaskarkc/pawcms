@@ -1,5 +1,6 @@
 import re
 from django.template.defaultfilters import slugify
+from django.utils.html import strip_tags
 
 
 def unique_slugify(instance, value, slug_field_name='slug', queryset=None,
@@ -51,10 +52,10 @@ def unique_slugify(instance, value, slug_field_name='slug', queryset=None,
         next += 1
 
     # if form_slug and original_slug != slug:
-    #     if original_slug in reserved:
-    #         reason = 'reserved'
-    #     else:
-    #         reason = 'already taken'
+    # if original_slug in reserved:
+    # reason = 'reserved'
+    # else:
+    # reason = 'already taken'
     #     messages.info(request, reason)
 
     setattr(instance, slug_field.attname, slug)
@@ -83,3 +84,13 @@ def _slug_strip(value, separator='-'):
             re_sep = re.escape(separator)
         value = re.sub(r'^%s+|%s+$' % (re_sep, re_sep), '', value)
     return value
+
+
+def excerpt(content, length=25):
+    content = content.replace('</p>', ' ').replace('</br>', ' ').replace('<br>', '').replace('</div>', ' ')
+    content = strip_tags(content)
+    pieces = content.split()
+    product = " ".join(pieces[:length])
+    if len(pieces) > length:
+        product += ' ...'
+    return product

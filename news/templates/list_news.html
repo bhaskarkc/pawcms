@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{#{% load filters %}#}
+{% load pagination_tags %}
+
+
+{% block title %} News {% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <span> {% trans 'News' %}</span>
+{% endblock %}
+
+{% block content %}
+
+    {% autopaginate objects 10 as paginated_objects %}
+    {##}
+    {##}
+    {#    {% for patron in paginated_objects %}#}
+    {#    {% endfor %}#}
+
+    <h2>{% trans 'News' %}</h2>
+
+    {% for object in paginated_objects %}
+
+        <article class="post">
+
+            <a href="{{ object.get_absolute_url }}"><h3 class="inline">{{ object.title }}</h3></a>
+            <span class="date meta inline">{{ object.date }}</span>
+
+            <p> {{ object.excerpt }}</p>
+
+
+        </article>
+
+    {% endfor %}
+
+
+    {% paginate %}
+
+
+{% endblock %}

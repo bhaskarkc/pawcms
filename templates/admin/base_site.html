@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% load filters %}
+
+{% block title %}{{ 'core.settings.site_name'|setting }} Site Administration{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">{{ 'core.settings.site_name'|setting }}</h1>
+{% endblock %}
+
+{% block userlinks %}
+    {% url 'django-admindocs-docroot' as docsroot %}
+    {% if docsroot %}
+        <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
+    {% endif %}
+    <a href="/">{% trans 'Visit Website' %}</a> /
+    <a href={% url 'site_settings' %}>{% trans 'Settings' %}</a> /
+    {% if user.has_usable_password %}
+        <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+    {% endif %}
+    <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+{% endblock %}

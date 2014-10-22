@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load filters %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+    {% if message %}
+        <h2 class="center">{{ message }}</h2>
+    {% endif %}
+
+    <div class="six columns">
+        <h3>Address</h3>
+
+        <p><strong>{{ 'core.settings.address'|setting|linebreaks }}</strong></p>
+
+        <p>
+            {% if 'core.settings.phone'|setting %}
+                Telephone: {{ 'core.settings.phone'|setting }}<br/>
+            {% endif %}
+            {% if 'core.settings.fax'|setting %}
+                Fax: {{ 'core.settings.fax'|setting }}<br/>
+            {% endif %}
+            {% if 'core.settings.email'|setting %}
+                E-mail: <a href="mailto:{{ 'core.settings.email'|setting }}">{{ 'core.settings.email'|setting }}</a>
+            {% endif %}
+        </p>
+
+
+        <!-- Contact Form -->
+
+
+        <h3>Contact Form</h3>
+
+        <!-- Row Layout for forms -->
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Name" name="name"/>
+            <input type="text" placeholder="Email" name="email"/>
+            <input type="text" placeholder="Subject" name="subject"/>
+            <textarea placeholder="Message" name="message"></textarea>
+            <input type="submit" value="Submit" class="button success"/>
+        </form>
+
+    </div>
+
+    <div class="six columns">
+        <h3>Where to find us</h3>
+        <iframe src=
+                        "http://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=no&amp;geocode=&amp;q=Dieter+Schneider,+Hafstadvegen+34,+F%C3%B8rde&amp;aq=0&amp;oq=hafstadvegen+34+&amp;sll=61.450282,5.85535&amp;sspn=0.008368,0.027874&amp;g=hafstadvegen+34&amp;ie=UTF8&amp;hq=Dieter+Schneider,&amp;hnear=Hafstadvegen+34,+6800+F%C3%B8rde,+Sogn+og+Fjordane&amp;t=m&amp;ll=61.453106,5.857172&amp;spn=0.009536,0.019913&amp;z=15&amp;iwloc=A&amp;output=embed"
+                style="width:400px; height:375px; border:0"></iframe>
+        <br/>
+        <small><a style="color: #0000ff; text-align: left;" href=
+                "http://maps.google.no/maps?f=q&amp;source=embed&amp;hl=no&amp;geocode=&amp;q=Dieter+Schneider,+Hafstadvegen+34,+F%C3%B8rde&amp;aq=0&amp;oq=hafstadvegen+34+&amp;sll=61.450282,5.85535&amp;sspn=0.008368,0.027874&amp;g=hafstadvegen+34&amp;ie=UTF8&amp;hq=Dieter+Schneider,&amp;hnear=Hafstadvegen+34,+6800+F%C3%B8rde,+Sogn+og+Fjordane&amp;t=m&amp;ll=61.453106,5.857172&amp;spn=0.009536,0.019913&amp;z=15&amp;iwloc=A">
+            Enlarge map</a></small>
+    </div>
+{% endblock %}
