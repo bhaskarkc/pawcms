@@ -1,7 +1,7 @@
 from django.db import models
 from froala_editor.fields import FroalaField
 from users.models import User
-from app.libr import unique_slugify
+from app.libr import unique_slugify, excerpt
 import datetime
 
 
@@ -34,6 +34,10 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def excerpt(self):
+        return excerpt(self.content)
 
     class Meta:
         verbose_name_plural = 'News'
