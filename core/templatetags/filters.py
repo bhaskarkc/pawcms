@@ -7,6 +7,8 @@ register = Library()
 
 
 def strip_quotes(string):
+    if string is None:
+        return None
     if string.startswith('"') and string.endswith('"'):
         string = string[1:-1]
 
