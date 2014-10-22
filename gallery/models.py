@@ -16,7 +16,11 @@ class Image(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
+    @property
+    def file_name(self):
+        return self.file.file.name.split('/')[-1:][0]
+
     def __str__(self):
         if not self.name:
-            return self.file.file.name.split('/')[-1:][0]
+            return self.file_name
         return self.name
