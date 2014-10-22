@@ -42,7 +42,7 @@ class Notice(models.Model):
         return excerpt(self.content)
 
     def get_absolute_url(self):
-        return reverse('view_notices', kwargs={'slug': self.slug})
+        return reverse('view_notice', kwargs={'slug': self.slug})
 
     class Meta:
         get_latest_by = 'date'

@@ -1,0 +1,12 @@
+<div class="widget">
+    <h3 class="center">Latest Notices</h3>
+    {% load filters %}
+    {% get_latest notice.Notice 5 -date as all_notices %}
+    <ul>
+        {% for notice in all_notices %}
+            <li>
+                <a href="{{ notice.get_absolute_url }}">{{ notice.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
