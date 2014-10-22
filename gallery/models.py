@@ -6,9 +6,17 @@ class Album(models.Model):
     description = models.TextField(blank=True, null=True)
     thumbnail = models.ForeignKey('Image', related_name='thumbnail_of', blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Image(models.Model):
     file = models.ImageField()
     album = models.ForeignKey(Album)
     name = models.CharField(max_length=255, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        if not self.name:
+            return self.file.file.name.split('/')[-1:][0]
+        return self.name
