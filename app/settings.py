@@ -21,6 +21,7 @@ INSTALLED_APPS = (
 
     'notice',
     'college',
+    'gallery',
     'news',
     'snippet',
     'core',

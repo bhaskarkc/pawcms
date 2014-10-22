@@ -1,5 +1,5 @@
 header {
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .snippet-heading {
@@ -32,4 +32,22 @@ header {
 
 .widget ul li {
     padding-left: 1em;
+}
+
+footer {
+    text-align: center;
+}
+
+header .row {
+    /*width: 100%;*/
+    /*text-align: center;*/
+}
+
+header img {
+    height: 150px !important;
+    float: right;
+}
+
+.errorlist{
+    color: darkred;
 }
