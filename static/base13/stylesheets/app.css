@@ -51,3 +51,7 @@ header img {
 .errorlist{
     color: darkred;
 }
+
+.page-content{
+line-height: 2em;
+}
