@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     'froala_editor',
     'dbsettings',
     'linaro_django_pagination',
+    'sorl.thumbnail',
 
     'notice',
     'gallery',
