@@ -6,3 +6,5 @@ django-froala-editor
 linaro-django-pagination
 pillow
 sorl-thumbnail
+python-memcached
+
