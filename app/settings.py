@@ -88,8 +88,8 @@ TEMPLATE_DIRS = (
 # '()': 'django.utils.log.RequireDebugFalse'
 # }
 # },
-#     'handlers': {
-#         'mail_admins': {
+# 'handlers': {
+# 'mail_admins': {
 #             'level': 'ERROR',
 #             'filters': ['require_debug_false'],
 #             'class': 'django.utils.log.AdminEmailHandler'
