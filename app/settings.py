@@ -86,7 +86,7 @@ TEMPLATE_DIRS = (
 # 'require_debug_false': {
 # '()': 'django.utils.log.RequireDebugFalse'
 # }
-#     },
+# },
 #     'handlers': {
 #         'mail_admins': {
 #             'level': 'ERROR',
@@ -120,3 +120,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.contrib.messages.context_processors.messages',
 )
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
