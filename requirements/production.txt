@@ -7,4 +7,4 @@ linaro-django-pagination
 pillow
 sorl-thumbnail
 python-memcached
-
+sorl-thumbnail==11.12.1b
