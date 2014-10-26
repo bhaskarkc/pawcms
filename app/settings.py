@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     'froala_editor',
     'dbsettings',
     'linaro_django_pagination',
+    'sorl.thumbnail',
 
     'notice',
     'college',
@@ -88,7 +89,8 @@ TEMPLATE_DIRS = (
 # '()': 'django.utils.log.RequireDebugFalse'
 # }
 # },
-#     'handlers': {
+
+# 'handlers': {
 #         'mail_admins': {
 #             'level': 'ERROR',
 #             'filters': ['require_debug_false'],
@@ -121,3 +123,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.contrib.messages.context_processors.messages',
 )
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}

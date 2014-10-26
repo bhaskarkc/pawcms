@@ -1,11 +1,17 @@
 <h2>Latest Photos</h2>
-
+{% load thumbnail %}
 {% load filters %}
 {% get_latest gallery.Image 6 as latest_photos %}
 
 {% for photo in latest_photos %}
     <div class="two columns">
-        <a href="#" class="th"><img src="{{ photo.file.url }}" width="100" height="100" alt="{{ photo }}"/></a>
+        {% thumbnail photo.file "100x100" as im %}
+            <a href="{{ photo.get_absolute_url }}" class="th">
+                <img src="{{ im.url }}" width="100" height="100" alt="{{ photo }}"/>
+{#                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">#}
+            </a>
+        {% endthumbnail %}
+
     </div>
 {% endfor %}
 

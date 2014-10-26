@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}Gallery{% endblock %}
-
+{% load thumbnail %}
 {% block content %}
 
     <h1>All Albums</h1>
@@ -11,16 +11,17 @@
 
         <div id="container">
 
-
             {% for obj in objects %}
-
-                <div class='box photo col2'>
-                    <a href="{{ obj.get_absolute_url }}"><img src='{{ obj.get_thumbnail.file.url }}'
-                                                              alt="{{ obj.description }}"/></a>
-                    <h4><strong>{{ obj.name }}</strong></h4>
-
-                    <p>{{ obj.description }}</p>
-                </div>
+                {% thumbnail obj.get_thumbnail.file "200x280" as im %}
+                    <div class='box photo col2'>
+                        <a href="{{ obj.get_absolute_url }}"><img src='{{ im.url }}'
+                                                                  alt="{{ obj.description }}"/></a>
+                        <h4><strong>{{ obj.name }}</strong></h4>
+                        <p>{{ obj.description }}</p>
+                    </div>
+                {% empty %}
+                    <p>No image</p>
+                {% endthumbnail %}
 
             {% endfor %}
 
