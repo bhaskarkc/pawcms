@@ -14,12 +14,14 @@ class File(models.Model):
         help_text='Leave empty/unchanged for default slug.')
     description = FroalaField(null=True, blank=True)
     file = models.FileField()
+    date = models.DateField(default=datetime.datetime.today())
     statuses = (
         ('Published', 'Published'), ('Draft', 'Draft'), ('Trashed', 'Trashed'))
     status = models.CharField(
         max_length=10,
         choices=statuses,
         default='Published')
+
     created_at = models.DateTimeField(editable=False)
     updated_at = models.DateTimeField(editable=False)
 
