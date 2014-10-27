@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from models import File
 
-# Create your views here.
+
+def list_files(request):
+    objects = File.objects.filter(status='Published').order_by('-date')
+    return render(request, 'list_files.html', {'objects': objects})
