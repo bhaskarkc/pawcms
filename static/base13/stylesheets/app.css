@@ -48,10 +48,14 @@ header img {
     float: right;
 }
 
-.errorlist{
+.errorlist {
     color: darkred;
 }
 
-.page-content{
-line-height: 2em;
+.page-content {
+    line-height: 2em;
+}
+
+header h1 a {
+    color: #333;
 }
