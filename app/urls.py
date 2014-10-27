@@ -3,6 +3,8 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
                        (r'^settings/', include('dbsettings.urls')),
+                       url(r'^froala_editor/', include('froala_editor.urls')),
+
                        url(r'^news/', include('news.urls')),
                        url(r'^notice/', include('notice.urls')),
                        url(r'^gallery/', include('gallery.urls')),
