@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
 
     'notice',
+    'file',
     'gallery',
     'news',
     'snippet',
