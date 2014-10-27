@@ -13,6 +13,7 @@ class File(models.Model):
         null=True,
         help_text='Leave empty/unchanged for default slug.')
     description = FroalaField(null=True, blank=True)
+    file = models.FileField()
     statuses = (
         ('Published', 'Published'), ('Draft', 'Draft'), ('Trashed', 'Trashed'))
     status = models.CharField(
