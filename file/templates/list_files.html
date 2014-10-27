@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{#{% load filters %}#}
+{% load pagination_tags %}
+
+
+{% block title %}{% trans 'Files' %}{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <span>{% trans 'Files' %}</span>
+{% endblock %}
+
+{% block content %}
+
+    {% autopaginate objects 10 as paginated_objects %}
+
+    <h2>{% trans 'Files' %}</h2>
+
+    {% for object in paginated_objects %}
+
+        <article class="post">
+
+            <a href="{{ object.file.url }}"><h3 class="inline">{{ object.title }}</h3></a>
+            <span class="date meta inline">{{ object.date }}</span>
+
+            <p> {{ object.description|safe }}</p>
+
+            <a href="{{ object.file.url }}" class="button secondary small radius">Download</a>
+
+
+        </article>
+
+    {% endfor %}
+
+
+    {% paginate %}
+
+
+{% endblock %}
