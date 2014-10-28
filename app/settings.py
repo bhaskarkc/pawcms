@@ -93,19 +93,12 @@ TEMPLATE_DIRS = (
 # },
 # 'handlers': {
 # 'mail_admins': {
-<<<<<<< Updated upstream
-#             'level': 'ERROR',
-#             'filters': ['require_debug_false'],
-#             'class': 'django.utils.log.AdminEmailHandler'
-#         }
-#     },
-=======
+
 # 'level': 'ERROR',
 # 'filters': ['require_debug_false'],
 # 'class': 'django.utils.log.AdminEmailHandler'
 # }
 # },
->>>>>>> Stashed changes
 #     'loggers': {
 #         'django.request': {
 #             'handlers': ['mail_admins'],
