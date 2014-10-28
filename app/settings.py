@@ -66,6 +66,7 @@ STATICFILES_DIRS = (
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
+    'core.loader.ThemeLoader',
     'django.template.loaders.app_directories.Loader',
     # 'django.template.loaders.eggs.Loader',
 )
@@ -92,11 +93,19 @@ TEMPLATE_DIRS = (
 # },
 # 'handlers': {
 # 'mail_admins': {
+<<<<<<< Updated upstream
 #             'level': 'ERROR',
 #             'filters': ['require_debug_false'],
 #             'class': 'django.utils.log.AdminEmailHandler'
 #         }
 #     },
+=======
+# 'level': 'ERROR',
+# 'filters': ['require_debug_false'],
+# 'class': 'django.utils.log.AdminEmailHandler'
+# }
+# },
+>>>>>>> Stashed changes
 #     'loggers': {
 #         'django.request': {
 #             'handlers': ['mail_admins'],
