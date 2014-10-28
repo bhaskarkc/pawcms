@@ -73,39 +73,9 @@
     <div class="twelve columns header_nav">
         <div class="row">
 
-            {#            <ul id="menu-header" class="nav-bar horizontal">#}
-            {##}
-            {#                <li class=""><a href="/">Home</a></li>#}
-            {##}
-            {#                <li class="has-flyout">#}
-            {#                    <a href="#">About Us</a><a href="#" class="flyout-toggle"></a>#}
-            {#                    <ul class="flyout"><!-- Flyout Menu -->#}
-            {#                        <li class="has-flyout"><a href="/historical-background/">Historical Background</a></li>#}
-            {#                        <li class="has-flyout"><a href="/message-from-chief/">Message from Chief</a></li>#}
-            {#                        <li class="has-flyout"><a href="/academic-programs/">Academic Programs</a></li>#}
-            {#                        <li class="has-flyout"><a href="/teachers-and-staffs/">Teachers and Staffs</a></li>#}
-            {#                    </ul>#}
-            {#                </li>#}
-            {#                <!-- END Flyout Menu -->#}
-            {##}
-            {##}
-            {#                <li class=""><a href="/gallery/">Gallery</a></li>#}
-            {#                <li class=""><a href="/file/">Downloads</a></li>#}
-            {#                <li class=""><a href="/news/">News</a></li>#}
-            {#                <li class=""><a href="/notice/">Notices</a></li>#}
-            {##}
-            {#                <li class=""><a href="/contact-us/">Contact Us</a></li>#}
-            {##}
-            {#            </ul>#}
-
-            {#            <script type="text/javascript">#}
-            {#                //<![CDATA[#}
-            {#                $('ul#menu-header').nav - bar();#}
-            {#                //]]>#}
-            {#            </script>#}
 
             {% load sitetree %}
-            {% sitetree_menu from "main-nav-menu" include "trunk,1,level3" %}
+            {% sitetree_menu from "main-nav-menu" include "trunk,1,level3" template "sitetree/menu_foundation.html" %}
 
         </div>
     </div>
