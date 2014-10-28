@@ -68,3 +68,15 @@ header h1 a {
 .panel p, .page-content p {
     text-align: justify;
 }
+
+.flyout li a {
+    text-align: left;
+}
+
+.nav-bar > li.has-flyout > a.flyout-toggle {
+    padding: inherit;
+}
+
+ul.flyout li.active, .nav-bar li ul li.active {
+    border-left: none;
+}
