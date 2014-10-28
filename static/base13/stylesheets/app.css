@@ -54,8 +54,16 @@ header img {
 
 .page-content {
     line-height: 2em;
+    background: #f2f2f2;
+    border: solid 1px #e6e6e6;
+    margin: 0 0 22px 0;
+    padding: 20px;
 }
 
 header h1 a {
     color: #333;
+}
+
+.panel p, .page-content p {
+    text-align: justify;
 }
