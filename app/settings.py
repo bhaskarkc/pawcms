@@ -34,6 +34,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'core.middleware.SelectiveSessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -93,10 +94,10 @@ TEMPLATE_DIRS = (
 # },
 # 'handlers': {
 # 'mail_admins': {
-#             'level': 'ERROR',
-#             'filters': ['require_debug_false'],
-#             'class': 'django.utils.log.AdminEmailHandler'
-#         }
+# 'level': 'ERROR',
+# 'filters': ['require_debug_false'],
+# 'class': 'django.utils.log.AdminEmailHandler'
+# }
 #     },
 #     'loggers': {
 #         'django.request': {
@@ -131,3 +132,7 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+# DISABLE_SESSIONS_FOR = [
+#     '/',
+# ]
