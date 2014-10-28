@@ -19,6 +19,7 @@ INSTALLED_APPS = (
     'dbsettings',
     'linaro_django_pagination',
     'sorl.thumbnail',
+    'sitetree',
 
     'notice',
     'file',
