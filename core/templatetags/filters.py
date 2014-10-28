@@ -27,7 +27,6 @@ class LatestContentNode(Node):
     def render(self, context):
 
         if self.order_by:
-            print self.model._default_manager
             context[self.varname] = self.model._default_manager.all().order_by(self.order_by)[:self.num]
         else:
             context[self.varname] = self.model._default_manager.all()[:self.num]

@@ -11,3 +11,4 @@ linaro-django-pagination
 pillow
 python-memcached
 sorl-thumbnail==11.12.1b
+django-sitetree

@@ -4,6 +4,7 @@ import dbsettings
 class CoreSettings(dbsettings.Group):
     site_name = dbsettings.StringValue()
     site_slogan = dbsettings.StringValue(required=False)
+    theme = dbsettings.StringValue(required=False, help_text='Change with caution')
     address = dbsettings.TextValue(required=False)
     phone = dbsettings.StringValue(required=False)
     fax = dbsettings.StringValue(required=False)
