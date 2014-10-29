@@ -80,3 +80,16 @@ header h1 a {
 ul.flyout li.active, .nav-bar li ul li.active {
     border-left: none;
 }
+
+@media screen and (max-width: 782px) {
+
+    header img {
+        display: none;
+    }
+
+    header, .panel, .section_dark img, .widget, .fb-wrapper {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+}
