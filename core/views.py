@@ -31,7 +31,7 @@ def contact(request):
     return render(request, 'contact.html', {'message': message})
 
 
-@user_passes_test(lambda u: u.is_staff)
+@user_passes_test(lambda u: u.is_superuser)
 def clear_cache(request):
     from django.core.cache import cache
     from django.core.urlresolvers import reverse
@@ -42,7 +42,6 @@ def clear_cache(request):
         cache._cache.flush_all()
     except AttributeError:
         pass
-
     try:
         cache._cache.clear()
     except AttributeError:
@@ -51,10 +50,21 @@ def clear_cache(request):
         cache._expire_info.clear()
     except AttributeError:
         pass
+
+    # django-redis
     try:
         cache.cache.clear()
     except AttributeError:
         pass
+
+    # django-cacheops
+    try:
+        from cacheops.conf import redis_client
+
+        redis_client.flushdb()
+    except ImportError:
+        pass
+
     messages.info(request, "Cache Cleared")
     try:
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
