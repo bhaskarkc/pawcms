@@ -7,6 +7,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # Application definition
 
 INSTALLED_APPS = (
+    'cacheops',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -106,6 +108,12 @@ SESSION_CACHE_ALIAS = 'default'
 # CACHE_MIDDLEWARE_SECONDS = 216000
 # CACHE_MIDDLEWARE_KEY_PREFIX = ''
 
-# DISABLE_SESSIONS_FOR = [
-# '/',
-# ]
+CACHEOPS_DEFAULTS = {
+    'timeout': 60 * 60
+}
+
+CACHEOPS = {
+    '*.*': {'ops': 'all'},
+}
+
+
