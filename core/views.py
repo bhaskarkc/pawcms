@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from socket import error as socket_error
+from django.contrib.auth.decorators import user_passes_test
 
 
 def home(request):
@@ -28,3 +29,35 @@ def contact(request):
             message = 'Please fill in the required fields!'
             return render(request, 'contact.html', {'message': message})
     return render(request, 'contact.html', {'message': message})
+
+
+@user_passes_test(lambda u: u.is_staff)
+def clear_cache(request):
+    from django.core.cache import cache
+    from django.core.urlresolvers import reverse
+    from django.http import HttpResponseRedirect
+    from django.contrib import messages
+
+    try:
+        cache._cache.flush_all()
+    except AttributeError:
+        pass
+
+    try:
+        cache._cache.clear()
+    except AttributeError:
+        pass
+    try:
+        cache._expire_info.clear()
+    except AttributeError:
+        pass
+    try:
+        cache.cache.clear()
+    except AttributeError:
+        pass
+    messages.info(request, "Cache Cleared")
+    try:
+        return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    except KeyError:
+        return HttpResponseRedirect(reverse("admin:index"))
+    return HttpResponseRedirect(reverse("admin:index"))
