@@ -7,6 +7,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # Application definition
 
 INSTALLED_APPS = (
+    'cacheops',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -34,6 +36,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # 'core.middleware.SelectiveSessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -43,6 +46,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'linaro_django_pagination.middleware.PaginationMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'app.urls'
@@ -96,13 +100,21 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
-    }
+
+# DJANGO_REDIS_IGNORE_EXCEPTIONS = True
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_CACHE_ALIAS = 'default'
+
+# CACHE_MIDDLEWARE_SECONDS = 216000
+# CACHE_MIDDLEWARE_KEY_PREFIX = ''
+
+CACHEOPS_DEFAULTS = {
+    'timeout': 60 * 60
 }
 
-# DISABLE_SESSIONS_FOR = [
-#     '/',
-# ]
+CACHEOPS = {
+    '*.*': {'ops': 'all'},
+}
+
+
