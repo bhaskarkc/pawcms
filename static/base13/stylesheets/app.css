@@ -65,7 +65,7 @@ header h1 a {
     color: #333;
 }
 
-.panel p, .page-content p {
+.panel, .page-content {
     text-align: justify;
 }
 
