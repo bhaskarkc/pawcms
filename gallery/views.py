@@ -15,3 +15,19 @@ def view_album(request, slug):
 def view_image(request, pk):
     image = get_object_or_404(Image, pk=pk)
     return render(request, 'view_image.html', {'image': image})
+
+
+from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
+from sitetree.utils import tree, item
+
+gallery_tree = (
+    tree('gallery', 'Gallery Tree', (
+        item('Gallery', 'list_albums', alias='gallery',
+             children=(item(album.name, 'view_album ' + album.slug) for album in Album.objects.all()), ),
+    )),
+)
+
+register_dynamic_trees(
+    compose_dynamic_tree(gallery_tree, target_tree_alias='main-nav-menu'),
+    reset_cache=True
+)
