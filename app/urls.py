@@ -2,7 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 urlpatterns = patterns('',
-                       (r'^settings/', include('dbsettings.urls')),
+                       (r'^admin/settings/', include('dbsettings.urls')),
+                       url(r'admin/clear-cache/', 'core.views.clear_cache', name='clear_cache'),
                        url(r'^froala_editor/', include('froala_editor.urls')),
 
                        url(r'^news/', include('news.urls')),
