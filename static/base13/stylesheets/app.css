@@ -45,8 +45,21 @@ header .row {
 }
 
 header img {
-    height: 150px !important;
+    padding: 0.5em;
     float: right;
+}
+
+header h3 {
+    margin: 0;
+    padding: 0;
+}
+
+header h1{
+    padding-top:0;
+}
+
+header .columns {
+    padding-left: 0;
 }
 
 .errorlist {
@@ -81,7 +94,7 @@ ul.flyout li.active, .nav-bar li ul li.active {
     border-left: none;
 }
 
-.button, .button:hover{
+.button, .button:hover {
     background: #F06B48;
     border-color: #F06B48;
 }
