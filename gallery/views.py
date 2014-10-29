@@ -31,3 +31,4 @@ register_dynamic_trees(
     compose_dynamic_tree(gallery_tree, target_tree_alias='main-nav-menu'),
     reset_cache=True
 )
+
