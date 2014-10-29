@@ -19,7 +19,10 @@ class Album(models.Model):
     def get_thumbnail(self):
         if self.thumbnail:
             return self.thumbnail
-        return self.images.all()[0]
+        try:
+            return self.images.all()[0]
+        except IndexError:
+            return None
 
     def save(self, *args, **kwargs):
         unique_slugify(self, self.name)
