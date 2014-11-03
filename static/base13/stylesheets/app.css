@@ -40,8 +40,7 @@ footer {
 }
 
 header .row {
-    /*width: 100%;*/
-    /*text-align: center;*/
+    padding: 20px;
 }
 
 header img {
@@ -54,8 +53,8 @@ header h3 {
     padding: 0;
 }
 
-header h1{
-    padding-top:0;
+header h1 {
+    padding-top: 0;
 }
 
 header .columns {
