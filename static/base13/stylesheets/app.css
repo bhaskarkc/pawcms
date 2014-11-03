@@ -1,5 +1,28 @@
+.header_nav {
+    background-color: #E6F3FC;
+}
+
+body, .section_light {
+    background: #E8E2D2;
+}
+
+.nav-bar > li > a {
+    color: #333;
+}
+
+.nav-bar > li > a:hover {
+    color: #000;
+}
+
+.active a {
+    background: #d2ab67;
+    color: #FFF
+}
+
 header {
-    /*text-align: center;*/
+    background-color: #97d9ef;
+    border-bottom: 5px solid #d2ab67;
+
 }
 
 .snippet-heading {
@@ -110,3 +133,4 @@ ul.flyout li.active, .nav-bar li ul li.active {
     }
 
 }
+

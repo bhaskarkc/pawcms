@@ -315,19 +315,6 @@ dl.tabs dd.active a {
     transition: all .2s ease-in-out;
 }
 
-.nav-bar > li > a {
-    color: #4d4d4d
-}
-
-.nav-bar > li > a:hover {
-    color: #000;
-}
-
-.active a {
-    background: #F06B48;
-    color: #FFF
-}
-
 .nav-bar > li.has-flyout > a:first-child:after {
     content: "";
     display: block;
