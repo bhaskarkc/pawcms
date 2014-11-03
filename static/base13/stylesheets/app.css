@@ -1,10 +1,10 @@
-/*.header_nav {*/
-/*background-color: #E6F3FC;*/
-/*}*/
+.header_nav {
+background-color: #E6F3FC;
+}
 
-/*body, .section_light {*/
-/*background: #E8E2D2;*/
-/*}*/
+body, .section_light {
+background: #E8E2D2;
+}
 
 .nav-bar > li > a {
     color: #333;
@@ -15,8 +15,8 @@
 /*}*/
 
 .active a {
-    /*background: #d2ab67;*/
-    background: #F06B48;
+    background: #d2ab67;
+    /*background: #F06B48;*/
     color: #FFF
 }
 
