@@ -71,7 +71,7 @@ header .row {
 
 header img {
     padding: 0.5em;
-    float: right;
+    /*float: right;*/
 }
 
 header h3 {
@@ -137,3 +137,18 @@ ul.flyout li.active, .nav-bar li ul li.active {
 
 }
 
+header h3 {
+    font-size: 52px;
+    text-shadow: 0 0 6px #000;
+    color: #FFF;
+}
+
+header h1 a {
+    color: #FFF;
+    text-shadow: 0 0 5px #000;
+    font-size: 112px;
+}
+
+header h1 a:hover {
+    color: #FFF;
+}
