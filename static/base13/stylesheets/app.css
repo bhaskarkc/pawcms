@@ -21,13 +21,11 @@
 }
 
 header {
-
     height: 500px;
     background: #000;
-    background-image: url(http://upload.wikimedia.org/wikipedia/commons/9/9b/CPU_Engineering_Building.JPG);
+    background-image: url(/static/college.jpg);
     background-size: cover;
     background-position-y: -150px;
-
 }
 
 .snippet-heading {
