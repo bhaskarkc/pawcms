@@ -20,8 +20,13 @@ body, .section_light {
 }
 
 header {
-    background-color: #97d9ef;
-    border-bottom: 5px solid #d2ab67;
+
+
+    height: 500px;
+    background: #000;
+    background-image: url(http://upload.wikimedia.org/wikipedia/commons/9/9b/CPU_Engineering_Building.JPG);
+    background-size: cover;
+    background-position-y: -150px;
 
 }
 
