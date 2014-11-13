@@ -21,7 +21,7 @@ body, .section_light {
 }
 
 header {
-    height: 500px;
+    height: 200px;
     background: #000;
     background-image: url(/static/college.jpg);
     background-size: cover;
