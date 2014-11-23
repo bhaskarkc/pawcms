@@ -1,12 +1,12 @@
 import os
 from django.template.loader import BaseLoader, TemplateDoesNotExist
-from core import settings as core_settings
+from core import site_settings
 from django.conf import settings
 from django.utils._os import safe_join
 
 
 def calculate_custom_template_dirs():
-    theme = core_settings.theme
+    theme = site_settings.theme
     if not theme:
         return ()
     template_dirs = settings.TEMPLATE_DIRS

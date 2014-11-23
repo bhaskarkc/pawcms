@@ -15,10 +15,16 @@ def get_themes():
 themes = get_themes()
 
 
-class CoreSettings(dbsettings.Group):
+class SiteSettings(dbsettings.Group):
     site_name = dbsettings.StringValue()
     site_slogan = dbsettings.StringValue(required=False)
-    theme = dbsettings.StringValue(required=False, help_text='Change with caution')
+    theme = dbsettings.MultipleChoiceValue(choices=themes, help_text='Change with caution')
+
+
+site_settings = SiteSettings(' Site Settings')
+
+
+class ContactSettings(dbsettings.Group):
     address = dbsettings.TextValue(required=False)
     phone = dbsettings.StringValue(required=False)
     fax = dbsettings.StringValue(required=False)
@@ -26,7 +32,6 @@ class CoreSettings(dbsettings.Group):
     location_name = dbsettings.StringValue(required=False)
     latitude = dbsettings.StringValue(required=False)
     longitude = dbsettings.StringValue(required=False)
-    theme = dbsettings.MultipleChoiceValue(choices=themes)
 
 
-settings = CoreSettings()
+contact_settings = ContactSettings('Contact Settings')

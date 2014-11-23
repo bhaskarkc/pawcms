@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load filters %}
+{% load dbsettings %}
 {% block title %}Contact Us{% endblock %}
 
 {% block extrahead %}
@@ -14,7 +14,7 @@
         function initialize() {
             var mapCanvas = document.getElementById('map_canvas');
             var mapOptions = {
-                center: new google.maps.LatLng({{ 'core.settings.latitude'|setting }}, {{ 'core.settings.longitude'|setting }}),
+                center: new google.maps.LatLng({{ 'core.contact_settings.latitude'|parse }}, {{ 'core.contact_settings.longitude'|parse }}),
                 zoom: 12,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
@@ -33,17 +33,17 @@
     <div class="six columns">
         <h3>Address</h3>
 
-        <p><strong>{{ 'core.settings.address'|setting|linebreaks }}</strong></p>
+        <p><strong>{{ 'core.contact_settings.address'|parse|linebreaks }}</strong></p>
 
         <p>
-            {% if 'core.settings.phone'|setting %}
-                Telephone: {{ 'core.settings.phone'|setting }}<br/>
+            {% if 'core.contact_settings.phone'|parse %}
+                Telephone: {{ 'core.contact_settings.phone'|parse }}<br/>
             {% endif %}
-            {% if 'core.settings.fax'|setting %}
-                Fax: {{ 'core.settings.fax'|setting }}<br/>
+            {% if 'core.contact_settings.fax'|parse %}
+                Fax: {{ 'core.contact_settings.fax'|parse }}<br/>
             {% endif %}
-            {% if 'core.settings.email'|setting %}
-                E-mail: <a href="mailto:{{ 'core.settings.email'|setting }}">{{ 'core.settings.email'|setting }}</a>
+            {% if 'core.contact_settings.email'|parse %}
+                E-mail: <a href="mailto:{{ 'core.contact_settings.email'|parse }}">{{ 'core.contact_settings.email'|parse }}</a>
             {% endif %}
         </p>
 

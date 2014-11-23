@@ -4,7 +4,7 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
-{% load filters %}
+{% load dbsettings %}
 
 <head>
 
@@ -12,7 +12,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width"/>
 
-    <title>{% block title %}{{ 'core.settings.site_name'|setting }}{% endblock %}</title>
+    <title>{% block title %}{{ 'core.site_settings.site_name'|parse }}{% endblock %}</title>
 
     <link rel="stylesheet" href="/static/base13/stylesheets/foundation.min.css">
     <link rel="stylesheet" href="/static/base13/stylesheets/main.css">
@@ -49,9 +49,9 @@
         <div class="nine columns">
 
             <div class="site-head">
-                <h1><a href="/">{{ 'core.settings.site_name'|setting }}</a></h1>
+                <h1><a href="/">{{ 'core.site_settings.site_name'|parse }}</a></h1>
 
-                <h3>{{ 'core.settings.site_slogan'|setting }}</h3>
+                <h3>{{ 'core.site_settings.site_slogan'|parse }}</h3>
             </div>
 
         </div>
@@ -93,7 +93,7 @@
 
 <footer>
     <hr>
-    Copyright © 2014 {{ 'core.settings.site_name'|setting }}
+    Copyright © 2014 {{ 'core.site_settings.site_name'|parse }}
 </footer>
 
 <!-- ######################## Scripts ######################## -->

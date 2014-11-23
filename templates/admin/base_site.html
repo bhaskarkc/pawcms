@@ -1,11 +1,11 @@
 {% extends "admin/base.html" %}
 {% load i18n %}
-{% load filters %}
+{% load dbsettings %}
 
-{% block title %}{{ 'core.settings.site_name'|setting }} Site Administration{% endblock %}
+{% block title %}{{ 'core.site_settings.site_name'|parse }} Site Administration{% endblock %}
 
 {% block branding %}
-    <h1 id="site-name">{{ 'core.settings.site_name'|setting }}</h1>
+    <h1 id="site-name">{{ 'core.site_settings.site_name'|parse }}</h1>
 {% endblock %}
 
 {% block userlinks %}
