@@ -1,5 +1,22 @@
-header {
-    /*text-align: center;*/
+/*.header_nav {*/
+    /*background-color: #E6F3FC;*/
+/*}*/
+
+/*body, .section_light {*/
+    /*background: #E8E2D2;*/
+/*}*/
+
+.nav-bar > li > a {
+    color: #333;
+}
+
+/*.nav-bar > li > a:hover {*/
+    /*color: #000;*/
+/*}*/
+
+.active a {
+    background: #d2ab67;
+    color: #FFF
 }
 
 .snippet-heading {
