@@ -12,7 +12,7 @@ def calculate_custom_template_dirs():
     template_dirs = settings.TEMPLATE_DIRS
     possible_dirs = []
     for template_dir in template_dirs:
-        possible_dirs.append(os.path.join(template_dir, theme))
+        possible_dirs.append(os.path.join(template_dir, 'themes', theme))
     return tuple(possible_dirs)
 
 # At compile time, cache the directories to search.
