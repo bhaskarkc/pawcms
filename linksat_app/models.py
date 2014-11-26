@@ -16,3 +16,15 @@ class BaseModel(models.Model):
 
 class Product(BaseModel):
     pass
+
+
+class Brand(BaseModel):
+    pass
+
+
+class Solution(BaseModel):
+    pass
+
+
+class Customer(BaseModel):
+    pass
