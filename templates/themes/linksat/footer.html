@@ -1,19 +1,9 @@
 {% load dbsettings %}
+{% load sitetree %}
 <footer>
     <div class="column1">
         <img src="{{ 'core.site_settings.logo'|parse }}" alt="">
-        <ul>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-            <li><a href="">Link one</a></li>
-        </ul>
+        {% sitetree_menu from "footer-links" include "trunk,1,level3" %}
     </div>
     <div class="column2">
         <h3>Contact us</h3>
