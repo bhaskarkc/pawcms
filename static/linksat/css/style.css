@@ -176,6 +176,7 @@ font-size: 17px;
 .wrapper--red .content img {
 float: left;
 margin: 10px 35px 10px 0;
+width: auto;
 }
 .wrapper--red .content {
 padding: 10px 0 10px 0;

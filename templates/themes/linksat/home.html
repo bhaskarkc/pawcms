@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load snippets %}
 {% block content %}
 
     <div class="wrapper wrapper--banner">
@@ -13,7 +14,7 @@
                      title="Lorem ipsum dolor sit amet, adipisicing elit. "/></li>
         </ul>
         <div class="content content--banner">
-        {% include 'header.html' %}
+            {% include 'header.html' %}
             <nav id="navR">
                 <header>
                     <div id="logo2">
@@ -225,15 +226,11 @@
     </div>
     <div class="wrapper wrapper--red">
         <div class="content">
-            <img src="/static/linksat/images/KIPYA_aa.png" alt="">
+            {{ 'Sponsor'|snippet }}
 
-            <h3>Sponsored, developed and kosted by KIPYA Connect Buisness Solutions</h3>
 
-            <p>Modern CMS system at affordable price</p>
 
-            <p>Kipya Connect - Buisness solution for you success!</p>
 
-            <p>www.kipya-connect.com</p>
         </div>
     </div>
 {% endblock %}
