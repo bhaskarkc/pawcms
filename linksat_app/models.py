@@ -9,6 +9,7 @@ class BaseModel(models.Model):
     large_image = models.ImageField(upload_to='images/', null=True, blank=True)
     description = FroalaField(null=True, blank=True)
     external_url = models.URLField(null=True, blank=True)
+    enabled = models.BooleanField(default=True)
 
     class Meta:
         abstract = True
