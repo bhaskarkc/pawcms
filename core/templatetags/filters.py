@@ -42,3 +42,7 @@ def get_latest(parser, token):
     else:
         raise TemplateSyntaxError, "invalid number of arguments"
 
+@register.assignment_tag
+def get_social_links():
+    from core.models import SocialLink
+    return SocialLink.objects.all()
