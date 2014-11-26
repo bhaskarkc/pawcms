@@ -9,3 +9,5 @@ django-redis
 django-cacheops
 sorl-thumbnail==11.12.1b
 django-sitetree
+django-admin-sortable2
+
