@@ -1,41 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <div class="wrapper wrapper--banner">
+
         <ul class="bxslider">
-            <li><img src="/static/linksat/images/banner_img.png" title="Lorem ipsum, consectetur adipisicing elit. "/></li>
-            <li><img src="/static/linksat/images/banner_img.png" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. "/>
+            <li><img src="/static/linksat/images/banner_img.png" title="Lorem ipsum, consectetur adipisicing elit. "/>
             </li>
-            <li><img src="/static/linksat/images/banner_img.png" title="Lorem ipsum dolor sit amet, adipisicing elit. "/></li>
+            <li><img src="/static/linksat/images/banner_img.png"
+                     title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. "/>
+            </li>
+            <li><img src="/static/linksat/images/banner_img.png"
+                     title="Lorem ipsum dolor sit amet, adipisicing elit. "/></li>
         </ul>
         <div class="content content--banner">
-            <header id="header">
-                <div id="logo">
-                    <img src="/static/linksat/images/logo.png" alt="">
-                </div>
-                <nav id="nav">
-                    <div id="menuBox">
-                        <ul>
-                            <li>
-                                <a href="#"><span class="ifDown">&rsaquo; </span>Product Sales</a>
-                                <ul>
-                                    <li><a href="#">Desktops</a></li>
-                                    <li><a href="#">Laptops</a></li>
-                                    <li><a href="#">Desktops</a></li>
-                                    <li><a href="#">Laptops</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>&rsaquo; </span> Solutnion & Services</a></li>
-                            <li><a href="#"><span>&rsaquo; </span> Brands</a></li>
-                        </ul>
-                        <div id="search">
-                            <form action="">
-                                <input type="text">
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-
+        {% include 'header.html' %}
             <nav id="navR">
                 <header>
                     <div id="logo2">
