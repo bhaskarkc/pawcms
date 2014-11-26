@@ -1,3 +1,4 @@
+{% load dbsettings %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,7 +83,7 @@
     <div class="content">
         <footer>
             <div class="column1">
-                <img src="/static/linksat/images/logo.png" alt="">
+                <img src="{{ 'core.site_settings.logo'|parse }}" alt="">
                 <ul>
                     <li><a href="">Link one</a></li>
                     <li><a href="">Link one</a></li>
