@@ -22,6 +22,7 @@ INSTALLED_APPS = (
     'linaro_django_pagination',
     'sorl.thumbnail',
     'sitetree',
+    'adminsortable',
 
     'notice',
     'file',
@@ -31,6 +32,7 @@ INSTALLED_APPS = (
     'core',
     'users',
     'page',
+
 
 )
 
