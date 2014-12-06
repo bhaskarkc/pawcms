@@ -1,0 +1,18 @@
+Django==1.7
+Pillow==2.6.1
+autopep8==1.0.4
+django-admin-sortable2==0.3.1
+django-cacheops==2.2.1
+-e git+git@github.com:xtranophilist/django-dbsettings.git@a14db79468f7210f28323a674e74be3fc3c90943#egg=django_dbsettings-master
+django-debug-toolbar==1.2.1
+django-froala-editor==1.2.3.2
+django-mptt==0.6.1
+django-redis==3.7.1
+django-sitetree==1.2.0
+flake8==2.2.3
+ipdb==0.8
+ipython==2.3.0
+linaro-django-pagination==2.0.2
+psycopg2==2.5.4
+pyinotify==0.9.4
+sorl-thumbnail==11.12.1b

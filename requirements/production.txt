@@ -1,13 +1,15 @@
-django
-psycopg2
-django-mptt
-django-froala-editor
--e git+https://github.com/xtranophilist/django-dbsettings.git@master#egg=django-dbsettings
-linaro-django-pagination
-pillow
-django-redis
-django-cacheops
-sorl-thumbnail==11.12.1b
-django-sitetree
+Django
+Pillow
 django-admin-sortable2
+django-cacheops
+-e git+https://github.com/xtranophilist/django-dbsettings.git@master#egg=django-dbsettings
+django-froala-editor
+django-mptt
+django-redis
+django-sitetree
+linaro-django-pagination
+psycopg2
+sorl-thumbnail==11.12.1b
+
+
 

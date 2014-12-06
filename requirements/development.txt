@@ -1,16 +1,21 @@
-django
-psycopg2
-django-mptt
-django-froala-editor
-django-debug-toolbar
-ipython
-pyinotify
-flake8
--e git+https://github.com/xtranophilist/django-dbsettings.git@master#egg=django-dbsettings
-linaro-django-pagination
-pillow
-django-redis
-sorl-thumbnail==11.12.1b
-django-sitetree
-django-cacheops
+Django
+Pillow
+autopep8
 django-admin-sortable2
+django-cacheops
+-e git+https://github.com/xtranophilist/django-dbsettings.git@master#egg=django-dbsettings
+django-debug-toolbar
+django-froala-editor
+django-mptt
+django-redis
+django-sitetree
+flake8
+ipdb
+ipython
+linaro-django-pagination
+psycopg2
+pyinotify
+sorl-thumbnail==11.12.1b
+
+
+
