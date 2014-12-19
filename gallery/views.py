@@ -19,11 +19,13 @@ def view_image(request, pk):
 
 from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
 from sitetree.utils import tree, item
+from gallery import gallery_settings
 
 gallery_tree = (
     tree('gallery', 'Gallery Tree', (
         item('Gallery', 'list_albums', alias='gallery',
-             children=(item(album.name, 'view_album ' + album.slug) for album in Album.objects.all()), ),
+             children=(item(album.name, 'view_album ' + album.slug) for album in Album.objects.all()),
+             in_menu=gallery_settings.gallery_in_nav),
     )),
 )
 

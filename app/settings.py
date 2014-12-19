@@ -24,15 +24,14 @@ INSTALLED_APPS = (
     'sitetree',
     'adminsortable',
 
+    'core',
     'notice',
     'file',
     'gallery',
     'news',
     'snippet',
-    'core',
     'users',
     'page',
-
 
 )
 
