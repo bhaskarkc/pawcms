@@ -18,6 +18,7 @@ themes = get_themes()
 class SiteSettings(dbsettings.Group):
     site_name = dbsettings.StringValue()
     site_slogan = dbsettings.StringValue(required=False)
+    logo = dbsettings.ImageValue(upload_to='settings_images/')
     theme = dbsettings.MultipleChoiceValue(choices=themes, help_text='Change with caution')
 
 
