@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from socket import error as socket_error
 from django.contrib.auth.decorators import user_passes_test
+from django.utils.translation import ugettext_lazy as _
 
 
 def home(request):
@@ -71,3 +72,20 @@ def clear_cache(request):
     except KeyError:
         return HttpResponseRedirect(reverse("admin:index"))
     return HttpResponseRedirect(reverse("admin:index"))
+
+
+from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
+from sitetree.utils import tree, item
+from core import contact_settings
+
+contact_tree = (
+    tree('contact', 'Contact Tree', (
+        item(_('Contact'), 'contact', alias='contact', in_menu=contact_settings.contact_in_nav),
+    )),
+)
+
+register_dynamic_trees(
+    compose_dynamic_tree(contact_tree, target_tree_alias='main-nav-menu'),
+    reset_cache=True
+)
+

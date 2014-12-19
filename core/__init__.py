@@ -33,6 +33,7 @@ class ContactSettings(dbsettings.Group):
     location_name = dbsettings.StringValue(required=False)
     latitude = dbsettings.StringValue(required=False)
     longitude = dbsettings.StringValue(required=False)
+    contact_in_nav = dbsettings.BooleanValue('Show Contact Us in main nav menu', default=True)
 
 
 contact_settings = ContactSettings('Contact Settings')
